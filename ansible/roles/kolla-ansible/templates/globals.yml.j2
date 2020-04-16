@@ -555,6 +555,12 @@ install_epel: {{ kolla_ansible_install_epel | bool }}
 enable_host_ntp: {{ kolla_enable_host_ntp | bool }}
 {% endif %}
 
+{% if kolla_ansible_target_venv %}
+virtualenv: {{ kolla_ansible_target_venv }}
+{% endif %}
+
+create_kolla_user: false
+
 {% if kolla_extra_globals %}
 #######################
 # Extra configuration
